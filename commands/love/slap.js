@@ -25,7 +25,7 @@ module.exports = {
         return message.channel.send({
           embed: {
             color: 16734039,
-            description: `:wave: | Mention someone to slap!\n\n**Usage:** \`${process.env.PREFIX} slap <user>\``,
+            description: `:wave: | Mention someone to slap!\n\n**Usage:** \`${client.prefix}slap <user>\``,
           },
         });
       }

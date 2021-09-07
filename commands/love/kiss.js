@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const {MessageEmbed} =require('discord.js')
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "kiss",
@@ -21,20 +21,12 @@ module.exports = {
           args.join(" ").toLocaleLowerCase()
       );
     if (!user) {
-      return message.channel.send({
-        embed: {
-          color: 16734039,
-          description: `${client.bot_emojis.broken_heart} | You must mention user to kiss ;-;\n\n**Usage:** \`${process.env.PREFIX} kiss <user>\``,
-        },
-      });
+      embed = new MessageEmbed().setDescription(`:broken_heart: | You must mention user to kiss ;-;\n\n**Usage:** \`${client.prefix}kiss <user>\``).setColor('DARK_PURPLE')
+      return message.channel.send({embeds: [embed]});
     }
     if (message.author === user || message.member == user) {
-      return await message.channel.send({
-        embed: {
-          color: 16734039,
-          description: `${client.bot_emojis.broken_heart} | You cant kiss yourself ;-; (Try kissing someone else, your love. Maybe you need some help?)`,
-        },
-      });
+      embed = new MessageEmbed().setDescription(`:broken_heart: | You cant kiss yourself ;-; (Try kissing someone else, your love. Maybe you need some help?)`).setColor('DARK_PURPLE')
+      return await message.channel.send({embeds: [embed]});
     }
     (async () => {
       try {
@@ -64,7 +56,7 @@ module.exports = {
           )
           .setTimestamp()
           .setURL(body.url);
-        message.channel.send({embeds: [embed]});
+        message.channel.send({ embeds: [embed] });
       } catch (err) {
         message.channel.send({
           embed: {
