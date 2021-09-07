@@ -18,7 +18,7 @@ module.exports = {
       message.channel.send({ embeds: [embed] });
     } else {
       const embed = new MessageEmbed()
-        .setTitle(`Waifu`)
+        .setTitle(`Waifu :hot_face:`)
         .setColor("DARK_PURPLE")
         .setImage(data)
         .setFooter(
