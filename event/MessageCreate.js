@@ -1,5 +1,5 @@
 const client = require("../index");
-const Discord = require("discord.js");
+const { Discord, MessageEmbed } = require("discord.js");
 
 client.on("messageCreate", async (message) => {
   if (message.author.bot || !message.guild) return;
@@ -26,5 +26,14 @@ client.on("messageCreate", async (message) => {
       );
 
     await command.run(client, message, args, Discord);
+  }
+  const Target = message.mentions.users.first();
+
+  if (Target === client.user) {
+    embed = new MessageEmbed()
+      .setTitle(`Hi, ${message.author.tag}`)
+      .setDescription(`My prefix is **${client.prefix}**`)
+      .setColor("DARK_PURPLE");
+    message.channel.send({ embeds: [embed] });
   }
 });
