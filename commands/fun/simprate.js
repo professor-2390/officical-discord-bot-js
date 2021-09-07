@@ -19,7 +19,7 @@ module.exports = {
             args.join(" ").toLocaleLowerCase()
         ) ||
         message.member;
-      const simprate = Math.floor(Math.random() * 226);
+      const simprate = Math.floor(Math.random() * 100);
       const embed = new Discord.MessageEmbed() // Prettier
         .setTitle(`:stuck_out_tongue_winking_eye: Simprate Test`)
         .setDescription(`${user.user.username} Your simprate: \`${simprate}%\``)
