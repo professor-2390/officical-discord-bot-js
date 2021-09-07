@@ -3,7 +3,7 @@ const axios = require("axios").default;
 module.exports = {
   name: "fox",
   aliases: [],
-  description: "Gives some cute fox pics.",
+  description: "Gives some cute fox pics 🦊.",
   UserPerms: ["SEND_MESSAGES"],
 
   run: async (client, message, args, Discord) => {
