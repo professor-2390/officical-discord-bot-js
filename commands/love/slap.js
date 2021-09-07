@@ -22,20 +22,12 @@ module.exports = {
             args.join(" ").toLocaleLowerCase()
         );
       if (!member) {
-        return message.channel.send({
-          embed: {
-            color: 16734039,
-            description: `:wave: | Mention someone to slap!\n\n**Usage:** \`${client.prefix}slap <user>\``,
-          },
-        });
+        embed = new MessageEmbed().setDescription(`:wave: | Mention someone to slap!\n\n**Usage:** \`${client.prefix}slap <user>\``).setColor('DARK_PURPLE')
+        return await message.channel.send({embeds: [embed]});
       }
       if (message.author === member || message.member == member) {
-        return await message.channel.send({
-          embed: {
-            color: 16734039,
-            description: `:expressionless: | You cant slap yourself!`,
-          },
-        });
+        embed = new MessageEmbed().setDescription(`:expressionless: | Cant slap your self genius \n\n**Usage:** \`${client.prefix}slap <user>\``).setColor('DARK_PURPLE')
+        return await message.channel.send({embeds: [embed]});
       }
       (async () => {
         const response = await fetch("https://nekos.life/api/v2/img/slap");
@@ -62,7 +54,7 @@ module.exports = {
       message.channel.send({
         embed: {
           color: 16734039,
-          description: `Something went wrong... ${client.bot_emojis.sadness}`,
+          description: `Something went wrong... :sob:`,
         },
       });
     }
