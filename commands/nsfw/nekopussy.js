@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const NSFW = require("discord-nsfw");
 
 module.exports = {
-  name: "nekopussy",
+  name: "pussy",
   aliases: ["nekpuss"],
   description: "Shows a hot pussy pic :hot_face:.",
   UserPerms: ["SEND_MESSAGES"],
