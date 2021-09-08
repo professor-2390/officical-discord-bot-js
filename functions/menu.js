@@ -1,7 +1,6 @@
 const chalk = require(`chalk`);
 const { MessageSelectMenu, MessageActionRow } = require(`discord.js`);
 
-/* MENU CREATOR */
 /**
  * @param {Array} array - The array of options (rows to select) for the select menu
  * @returns MessageSelectMenu
@@ -31,7 +30,6 @@ const create_mh = (array) => {
     moderation: ":tools:",
   };
 
-  // now lets run it
   array.forEach((cca) => {
     let name = cca;
     let sName = `${name.toUpperCase()}`;
