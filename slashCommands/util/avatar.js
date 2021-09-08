@@ -26,6 +26,6 @@ module.exports = {
         
         await interaction.followUp({
             embeds: [embed]
-        }); //lets try it now 
+        });
     }
 }

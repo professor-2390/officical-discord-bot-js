@@ -1,7 +1,9 @@
+const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'ping',
-    description: 'Shows ping',
+    description: 'Shows bot`s latency / ping',
     run: async (client, interaction, options) => {
-        await interaction.followUp('Ping is' + client.ws.ping)
+        const embed = new MessageEmbed().setColor("DARK_PURPLE").setTitle("Ping").setDescription(`🏓 Ping: ${client.ws.ping}`)
+        await interaction.followUp({embeds: [embed]})
     }
 }
