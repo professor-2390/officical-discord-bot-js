@@ -44,7 +44,8 @@ module.exports = {
                 nsfw: ':hot_face:',
                 information: ':scroll:',
                 love: ":heart:",
-                image: ":frame_photo:"
+                image: ":frame_photo:",
+                fromReddit: ":bomb:",
             }
 
             let ccate = [];
@@ -299,4 +300,4 @@ module.exports = {
             });
         }
     },
-}; 
+}; ''
