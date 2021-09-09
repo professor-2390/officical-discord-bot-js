@@ -11,28 +11,19 @@ module.exports = {
       try {
         const user = message.mentions.users.first();
         if (!user) {
-          return message.channel.send({
-            embed: {
-              color: 16734039,
-              description: `:grin: | You must mention user to cuddle!\n\n**Usage:** \`${process.env.PREFIX} cuddle <user>\``,
-            },
-          });
+          const embed = new MessageEmbed()
+          .setDescription(`:grin: | You must mention user to cuddle!\n\n**Usage:** \`${client.prefix} cuddle <user>\``).setColor("DARK_PURPLE")
+          return message.channel.send({embeds: [embed]});
         }
         if (user == message.author) {
-          return message.channel.send({
-            embed: {
-              color: 5294200,
-              description: `:grin: | You can't cuddle yourself ;-;`,
-            },
-          });
+          const embed = new MessageEmbed()
+          .setDescription(`:grin: | You can't cuddle yourself ;-;`).setColor("DARK_PURPLE")
+          return message.channel.send({embeds: [embed]});
         }
         if (user == client.user) {
-          return message.channel.send({
-            embed: {
-              color: 5294200,
-              description: `:grin: | Oh, you tried to hug me but u can't... Im not real...`,
-            },
-          });
+          const embed = new MessageEmbed()
+          .setDescription(`:grin: | Oh, you tried to hug me but u can't... Im not real...`).setColor("DARK_PURPLE")
+          return message.channel.send({embeds: [embed]});
         }
         const response = await fetch("https://nekos.life/api/v2/img/cuddle");
         const body = await response.json();
