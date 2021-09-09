@@ -9,28 +9,16 @@ module.exports = {
       try {
         const user = message.mentions.users.first();
         if (!user) {
-          return message.channel.send({
-            embed: {
-              color: 16734039,
-              description: `${client.bot_emojis.error} | You must mention someone to hug!\n\n**Usage:** \`${process.env.PREFIX} hug <user>\``,
-            },
-          });
+          embed = new MessageEmbed().setTitle(`:hugging: | You must mention someone to hug!\n\n**Usage:** \`${client.prefix} hug <user>\``).setColor('DARK_PURPLE')
+          return message.channel.send({embeds: [embed]});
         }
         if (user == message.author) {
-          return message.channel.send({
-            embed: {
-              color: 5294200,
-              description: `${client.bot_emojis.grin} | You can't hug yourself but... Ok, get the hug from me ＼( ^o^ )／ !`,
-            },
-          });
+          const embed = new MessageEmbed().setDescription(`:grin: | You can't hug yourself but... Ok, get the hug from me ＼( ^o^ )／ !`).setColor('DARK_PURPLE')
+          return message.channel.send({embeds: [embed]});
         }
         if (user == client.user) {
-          return message.channel.send({
-            embed: {
-              color: 5294200,
-              description: `${client.bot_emojis.grin} | Oh, you tried to hug me but u can't... Im not real... But I can hug you ＼( ^o^ )／`,
-            },
-          });
+          const embed = new MessageEmbed().setTitle(`:grin: | Oh, you tried to hug me but u can't... Im not real... But I can hug you ＼( ^o^ )／`).setColor("DARK_PURPLE") 
+          return message.channel.send({embeds: [embed]});
         }
         const response = await fetch("https://nekos.life/api/v2/img/cuddle");
         const body = await response.json();
