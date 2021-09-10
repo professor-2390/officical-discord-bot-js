@@ -1,7 +1,5 @@
-﻿<p align="center">
-<img src="./static/logo.png" style="height:120px; border-radius:100px;"/>
-
-
+﻿<p align="center" style="height:120px">
+<img src="./static/logo.png" style="border-radius:100px;"/>
 </p>
 
 <h1 align="center">Project Void</h1>
