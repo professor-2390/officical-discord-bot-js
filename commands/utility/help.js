@@ -1,7 +1,9 @@
 const {
     MessageEmbed,
     Message,
-    Client
+    Client,
+    MessageActionRow,
+    MessageButton
 } = require("discord.js");
 const {
     readdirSync
@@ -88,12 +90,13 @@ module.exports = {
                 )
                 .setTimestamp()
                 .setColor(color)
-
-
-//creating the dropdown menu
+            const row = new MessageActionRow().addComponents(
+                    new MessageButton().setLabel("ADD THE BOT").setStyle("LINK").setURL("https://discord.com/api/oauth2/authorize?client_id=881214410742448179&permissions=8&scope=bot%20applications.commands")
+            )
             let menus = create_mh(ccate);
             return message.reply({
                 embeds: [embed],
+                components: [row],
                 // components: menus.smenu command menu
             }).then((msgg) => {
 
@@ -271,9 +274,7 @@ module.exports = {
                 )
                 .addField(
                     "Aliases:",
-                    command.aliases ?
-                    `\`${command.aliases.join("` `")}\`` :
-                    "No aliases for this command."
+                    command.aliases ? `\`${command.aliases.join("` `")}\`` : "No aliases for this command."
                 )
                 .addField(
                     "Usage:",
