@@ -12,18 +12,18 @@ module.exports = {
       .setDescription(message.guild.description || "No description found")
       .setThumbnail(message.guild.iconURL({ dynamic: true }))
       .setImage(message.guild.bannerURL({ dynamic:true }))
-      .addField("Verification Level:", `**${message.guild.verificationLevel}**`, false)
+      .addField("Verification Level:", `**${message.guild.verificationLevel}**`, true)
       .addField("Server Created At:",
       `${moment(message.guild.createdAt).format(
           "MMMM Do YYYY, h:mm:ss a"
-          )}\n**-** ${moment(message.guild.createdAt).startOf("day").fromNow()}`, false
+          )}\n**-** ${moment(message.guild.createdAt).startOf("day").fromNow()}`, true
           )
-      .addField("Total Members:", `**${message.guild.memberCount}**`, false)
-      .addField("NSFW Level:", `**${message.guild.nsfwLevel}**`, false)
-      .addField("Server Owner:", `**<@${message.guild.ownerId}>**`, false)
-      .addField("Server ID:", `${message.guild.id}`, false)
-      .addField("Highest Role:", `${message.guild.roles.highest}`, false)
-      .addField(`Total Roles:`,`${message.guild.roles.cache.size - 1}`, false)
+      .addField("Total Members:", `**${message.guild.memberCount}**`, true)
+      .addField("NSFW Level:", `**${message.guild.nsfwLevel}**`, true)
+      .addField("Server Owner:", `**<@${message.guild.ownerId}>**`, true)
+      .addField("Server ID:", `${message.guild.id}`, true)
+      .addField("Highest Role:", `${message.guild.roles.highest}`, true)
+      .addField(`Total Roles:`,`${message.guild.roles.cache.size - 1}`, true)
       .setColor("DARK_PURPLE")
       .setFooter(
         `Requested by ${message.author.username}`,

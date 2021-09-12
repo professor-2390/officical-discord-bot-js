@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "userinfo",
-  aliases: ["uinfo", "usrinfo"],
+  aliases: ["uinfo", "usrinfo", "whois"],
   description: "Gives you info about the mentioned user.",
   UserPerms: ["SEND_MESSAGES"],
   run: async (client, message, args, Discord) => {
@@ -33,7 +33,15 @@ module.exports = {
       `${moment(Target.createdAt).format(
         "MMMM Do YYYY, h:mm:ss a"
       )}\n**-** ${moment(Target.createdAt).startOf("day").fromNow()}`, true
-    )
+    ).setFooter(
+      `Requested by ${message.author.username}`,
+      message.author.displayAvatarURL({
+       dynamic: true,
+       format: "png",
+       size: 2048,
+      })
+     )
+     .setTimestamp();
     message.channel.send({embeds: [response]})
   },
 };
