@@ -23,12 +23,28 @@ const client = new Client({
 });
 module.exports = client;
 
+
+// Mongo Connection
+const { mongooseConnectionString } = require("./config.json");
+const mongoose = require("mongoose");
+mongoose.connect(mongooseConnectionString, {
+    useFindAndModify: true,
+    useUnifiedTopology: true,
+}).then(console.log('Connected to mongodb!'))
+
+
+// Logging System client
+const logs = require('discord-logs');
+logs(client, {
+    debug: true
+});
+
 client.commands = new Collection()
 client.config = require('./config.json')
 client.prefix = client.config.PREFIX
 client.aliases = new Collection()
 client.slash_commands = new Collection();
-
+    
 
 require('./handler/slash_commands');
 require('./handler')(client);
