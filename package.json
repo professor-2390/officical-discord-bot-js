@@ -1,6 +1,6 @@
 {
   "name": "void-bot",
-  "version": "1.2.2",
+  "version": "1.2.5",
   "description": "void bot is a multipurpose discord bot with moderation fun command and nsfw commands.",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "glob": "^7.1.7",
     "images-scraper": "^6.4.0",
     "moment": "^2.29.1",
+    "mongoose": "^5.13.9",
     "node-superfetch": "^0.2.3",
     "nodemon": "^2.0.12",
     "reddit-fetch": "^1.5.1",
