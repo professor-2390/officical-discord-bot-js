@@ -30,7 +30,9 @@
     "node-superfetch": "^0.2.3",
     "nodemon": "^2.0.12",
     "reddit-fetch": "^1.5.1",
+    "simply-djs": "^2.0.2",
     "something-random-on-discord": "^3.4.4",
-    "translate-google": "^1.4.3"
+    "translate-google": "^1.4.3",
+    "weather-js": "^2.0.0"
   }
 }
