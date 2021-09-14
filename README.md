@@ -1,5 +1,5 @@
 ﻿<p align="center">
-<img src="./static/logo.png" style="height: 120px"/>
+<img src="./static/icon.png" style="height: 120px"/>
 </p>
 
 <h1 align="center">Project Void</h1>
