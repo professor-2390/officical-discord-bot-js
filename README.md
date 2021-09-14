@@ -19,3 +19,6 @@
 <ul>
 <li>Professor.#2390</li>
 </ul>
+
+<hr/>
+<a href="https://discord.com/api/oauth2/authorize?client_id=881214410742448179&permissions=8&scope=bot%20applications.commands">Add the boy to your server</a>
