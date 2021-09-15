@@ -1,12 +1,13 @@
 const {
     Client,
     Message,
-    MessageEmbed
 } = require('discord.js');
 
 module.exports = {
     name: 'kick',
-    description: "Kicks the mentioned user from the guild.",
+    description: `Kicks the mentioned user from the server`,
+    UserPerms: ["KICK_MEMBERS"],
+    aliases: [],
     /** 
      * @param {Client} client 
      * @param {Message} message 
@@ -18,10 +19,15 @@ module.exports = {
 
         if (user) {
             user.kick().then(() => {
-                message.channel.send('🟢 Successfully kicked the user!')
+                const embed = new Discord.MessageEmbed().setTitle(`🟢 ${user.user.tag} Successfully kicked the user!`).setColor("GREEN")
+                message.channel.send({embeds: [embed]})
             })
+        } else if(!user){
+            const embed = new Discord.MessageEmbed().setTitle(`🔴 Failed to kick the user, mention a user to kick BRUHH!`).setColor("RED")
+            message.channel.send({embeds: [embed]})
         } else {
-            message.channel.send('🔴 Failed to kick the user, user not found!')
+            const embed = new Discord.MessageEmbed().setTitle(`🔴 Failed to kick the user, user not found!`).setColor("RED")
+            message.channel.send({embeds: [embed]})
         }
 
     }
