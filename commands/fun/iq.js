@@ -1,3 +1,5 @@
+const {MessageEmbed} = require('discord.js')
+
 module.exports = {
     name: 'iq',
     aliases: ['iqtest'],
@@ -8,7 +10,7 @@ module.exports = {
         try {
             const user = (await message.mentions.members.first()) || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find((r) => r.user.username.toLowerCase().includes() === args.join(" ").toLocaleLowerCase()) || message.guild.members.cache.find((r) => r.displayName.toLowerCase().includes() === args.join(" ").toLocaleLowerCase()) || message.member;
             const iq = Math.floor(Math.random() * 226);
-            const embed = new Discord.MessageEmbed() // Prettier
+            const embed = new MessageEmbed() // Prettier
              .setTitle(`:brain: IQ Test:`)
              .setDescription(`:bulb: ${user.user.username} IQ: \`${iq}\``)
              .setColor("RANDOM")
