@@ -41,7 +41,9 @@ module.exports = {
         love: ":heart:",
         image: ":frame_photo:",
         fromreddit: ":bomb:",
-        calculator: ":1234:"
+        calculator: ":1234:",
+        chatbot: ":parrot:",
+        soundboard: ":loud_sound:"
       };
 
       let ccate = [];
