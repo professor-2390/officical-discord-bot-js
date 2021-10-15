@@ -21,4 +21,4 @@
 </ul>
 
 <hr/>
-<a href="https://discord.com/api/oauth2/authorize?client_id=881214410742448179&permissions=8&scope=bot%20applications.commands">Add the boy to your server</a>
+<a href="https://discord.com/api/oauth2/authorize?client_id=881214410742448179&permissions=8&scope=bot%20applications.commands">Add the bot to your server</a>
