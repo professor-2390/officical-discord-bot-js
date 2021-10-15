@@ -43,7 +43,8 @@ module.exports = {
         fromreddit: ":bomb:",
         calculator: ":1234:",
         chatbot: ":parrot:",
-        soundboard: ":loud_sound:"
+        soundboard: ":loud_sound:",
+        music: "🎵"
       };
 
       let ccate = [];
