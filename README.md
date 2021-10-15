@@ -18,7 +18,6 @@
 ## Devs
 <ul>
 <li>Professor.#2390</li>
- <li>Noahh#0468</li>
 </ul>
 
 <hr/>
