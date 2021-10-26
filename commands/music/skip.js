@@ -6,18 +6,13 @@ module.exports = {
   description: "Skip the current music.",
   UserPerms: ["SEND_MESSAGES"],
   run: async (client, message, args, Discord) => {
+    let queue = client.distube.getQueue(message.guildId);
+    if (!queue.length) return message.channel.send(`❌ | There is nothing in the queue right now!`)
     try {
-        let queue = client.distube.getQueue(message.guildId);
-        if (!message.guild.me.voice.channel) {
-          return message.reply(`>>> Nothing Playing`);
-        }
-        if (queue.length <= 0) return message.channel.send("Cant skip lol")
-        queue.skip();
-    } catch(err){
-      if (err) {
-      const embed = new MessageEmbed().setDescription("There is no next song to skip to")
-      message.channel.send({embeds: [embed]})
-      }
+        const song = queue.skip()
+        message.channel.send(`⏭ | Skipped! Now playing:\n${song.name}`)
+    } catch (e) {
+        message.channel.send(`❌ | ${e}`)
     }
   },
 };
